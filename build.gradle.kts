@@ -18,12 +18,12 @@ plugins {
     id("org.asciidoctor.jvm.convert") version "3.3.2"
     id("org.asciidoctor.jvm.pdf") version "3.3.2"
     id("org.asciidoctor.jvm.epub") version "3.3.2"
-    id("org.jetbrains.kotlin.jvm") version "1.6.20"
+    id("org.jetbrains.kotlin.jvm") version "1.6.21"
     idea
     application
 }
 
-version = "2.1.1"
+version = "2.3.0"
 
 val javaVersion = JavaVersion.VERSION_11
 
@@ -78,35 +78,35 @@ tasks.getByName<JavaExec>("run") {
 
 dependencies {
     implementation("org.bouncycastle:bcpkix-jdk15on:1.70")
-    implementation("org.eclipse.jgit:org.eclipse.jgit:6.1.0.202203080745-r")
-    implementation("org.tmatesoft.svnkit:svnkit:1.10.5")
+    implementation("org.eclipse.jgit:org.eclipse.jgit:6.2.0.202206071550-r")
+    implementation("org.tmatesoft.svnkit:svnkit:1.10.7")
     implementation("org.yaml:snakeyaml:1.30")
     implementation("com.beust:jcommander:1.82")
     implementation("org.ini4j:ini4j:0.5.4")
     implementation("org.mapdb:mapdb:3.0.8")
-    implementation("com.unboundid:unboundid-ldapsdk:6.0.4")
-    implementation("org.eclipse.jetty:jetty-servlet:11.0.9")
+    implementation("com.unboundid:unboundid-ldapsdk:6.0.5")
+    implementation("org.eclipse.jetty:jetty-servlet:11.0.11")
     implementation("org.gitlab:java-gitlab-api:4.1.1")
-    implementation("org.bitbucket.b_c:jose4j:0.7.11")
-    implementation("com.github.zeripath:java-gitea-api:1.15.0")
+    implementation("org.bitbucket.b_c:jose4j:0.7.12")
+    implementation("com.github.zeripath:java-gitea-api:1.16.8")
 
     val gitLfsJava = "0.19.0"
     implementation("ru.bozaro.gitlfs:gitlfs-pointer:$gitLfsJava")
     implementation("ru.bozaro.gitlfs:gitlfs-client:$gitLfsJava")
     implementation("ru.bozaro.gitlfs:gitlfs-server:$gitLfsJava")
 
-    implementation("com.google.oauth-client:google-oauth-client:1.33.3")
-    implementation("com.google.http-client:google-http-client-jackson2:1.41.7")
+    implementation("com.google.oauth-client:google-oauth-client:1.34.1")
+    implementation("com.google.http-client:google-http-client-jackson2:1.42.1")
     implementation("org.slf4j:slf4j-api") {
         version {
             strictly("1.8.0-beta4")
         }
     }
 
-    runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.17.2")
+    runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.18.0")
 
-    testImplementation("org.testcontainers:testcontainers:1.17.1")
-    testImplementation("org.testng:testng:7.5")
+    testImplementation("org.testcontainers:testcontainers:1.17.3")
+    testImplementation("org.testng:testng:7.6.1")
 
     constraints {
         implementation("org.apache.httpcomponents:httpclient") {
